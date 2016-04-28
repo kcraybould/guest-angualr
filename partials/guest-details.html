@@ -1,0 +1,41 @@
+<div id="guest" class="top">
+	<label class="title">Guest Details</label><br><hr>
+	<label>Name:</label> {{guestDetail.name}} <br>
+	<label>Address:</label> {{guestDetail.addr.number}} {{guestDetail.addr.street}}<br>
+	<label>City:</label> {{guestDetail.addr.city}}<br>
+	<label>State:</label> {{guestDetail.addr.state}}<br>
+	<label>Zip:</label> {{guestDetail.addr.zip}}<br>
+	<label>HHonors:</label> {{guestDetail.hhonors}}<br>
+	<label>Conf:</label><ul>
+			<li ng-repeat="conf in guestDetail.res">
+				<a href="" ng-click="detailRez(conf)">{{conf}}</a>
+			</li>
+	     </ul>
+	<button ng-click="editDetails()">Edit Guest Profile</button>
+</div>
+<modal-dialog show="modalShow" width='400px' height='60%'>
+	<label class="title">Edit Guest Profile</label><br><hr>
+	<label>Name:</label>
+		<input type="text" 
+				ng-model = "guestDetail.name" 
+				value="{{guestDetail.name}}"> <br>
+	<label>Address:</label>
+		<input type="text" 	
+				ng-model="guestDetail.addr.number"
+				value="{{guestDetail.addr.number}} 
+							{{guestDetail.addr.street}}"><br>
+	<label>City:</label>
+		<input type="text" 
+				ng-model="guestDetail.addr.city"
+				value="{{guestDetail.addr.city}}"><br>
+	<label>State:</label>
+		<input type="text"
+				ng-model="guestDetail.addr.state"
+				value="{{guestDetail.addr.state}}"><br>
+	<label>Zip:</label>
+		<input type="text" 
+				ng-model="guestDetail.addr.zip"
+				value="{{guestDetail.addr.zip}}"><br>
+	<label>HHonors:</label> {{guestDetail.hhonors}}<br>
+	<button ng-click="editGuest(guestDetail)">Commit Changes</button>
+</modal-dialog>

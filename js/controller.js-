@@ -1,0 +1,24 @@
+var GuestControllers = angular.module('GuestControllers', []);
+
+GuestControllers.controller('GuestCtrl', function($scope, $http) {
+	$scope.GuestSelected = null;
+	$scope.guestlist = [];
+	$scope.detailOpen = false;
+	$scope.rezOpen = false;
+	$scope.modalShow = false;
+	$scope.cid = false;
+
+	$http.get('http://localhost:8080/TestServlet/rest/guest/list').then(function(resp) {
+		$scope.guestlist = resp.data;
+	});
+
+	$scope.detailGuest = function() {
+		$scope.detailOpen = true;
+		$scope.rezOpen = false;
+	}
+
+	$scope.showRezDetail = function( rez ) {
+		$scope.cid = rez;
+		$scope.rezOpen = true;
+	}
+});

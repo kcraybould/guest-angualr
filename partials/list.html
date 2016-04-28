@@ -1,0 +1,12 @@
+<div id = "list" class="top">
+	Choose a guest: <select id="guests" ng-model="GuestSelected" 
+		ng-change="detailGuest()"
+		ng-options="guest as guest.name for guest in guestlist">
+	</select>
+</div>
+<div id="details" ng-show="detailOpen">
+	<div guest-detail  gid="GuestSelected.id" show="showRezDetail()"></div>
+</div>
+<div id="rez" ng-show="rezOpen">
+	<div cid = "cid" rez-detail></div>
+</div>

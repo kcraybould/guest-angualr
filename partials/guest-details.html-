@@ -1,0 +1,18 @@
+<div id="guest" class="top">
+	<label class="title">Guest Details</label><br><hr>
+	<label>Name:</label> {{guestDetail.name}} <br>
+	<label>Address:</label> {{guestDetail.addr.number}} {{guestDetail.addr.street}}<br>
+	<label>City:</label> {{guestDetail.addr.city}}<br>
+	<label>State:</label> {{guestDetail.addr.state}}<br>
+	<label>Zip:</label> {{guestDetail.addr.zip}}<br>
+	<label>HHonors:</label> {{guestDetail.hhonors}}<br>
+	<label>Conf:</label><ul>
+			<li ng-repeat="conf in guestDetail.res">
+				<a href="" ng-click="detailRez(conf)">{{conf}}</a>
+			</li>
+	     </ul>
+	<button ng-click="editDetails()">Edit Guest Profile</button>
+</div>
+<div modal-dialog show="false" width='400px' height='60%'>
+	Hello Div!
+</div>
